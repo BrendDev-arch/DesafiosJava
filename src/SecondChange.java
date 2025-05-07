@@ -6,10 +6,10 @@ public class SecondChange {
     public static void main(String[] args) throws Exception {
         // Cara ou Coroa - Probabilidade
         // 50% Cara
-        // 50% Coroa
+        // 50% Coroapush
         // espaço amostral
         // Variável que receba a interação do jogo
-        // Randomm
+        // Random
         // For, do While e While
         String [] espacoAmostral = {"1", "2","3","4","5","6"};
         // objeto Random..
