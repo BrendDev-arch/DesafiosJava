@@ -4,16 +4,10 @@ import javax.swing.JOptionPane;
 
 public class SecondChange {
     public static void main(String[] args) throws Exception {
-        // Cara ou Coroa - Probabilidade
-        // 50% Cara
-        // 50% Coroa
-        // espaço amostral
-        // Variável que receba a interação do jogo
-        // Randomm
+        // Random
         // For, do While e While
         String [] espacoAmostral = {"1", "2","3","4","5","6"};
-        // objeto Random..
-        //sorteio
+
         Random random = new Random();
          
         //Contadores para verificar a distribuição
@@ -24,42 +18,126 @@ public class SecondChange {
         int cont5 = 0;
         int cont6 = 0;
 
-        String mensagem = "Espaço amostral: Lançar dados\n" + "Probabilidade de ser 1: 16,666% \n"+ "Probabilidade de ser 2: 16,666% \n"+"Probabilidade de ser 3: 16,666% \n" +"Probabilidade de ser 4: 16,666% \n"+"Probabilidade de ser 5: 16,666% \n"+"Probabilidade de ser 6: 16,666% \n" 
-                    + "\n" + "Deseja lançar um dado ?";
+        
+
+
+        String mensagem =  "Deseja lançar um dado ?";
         // loop de lançamento
         while(true){
+            int Total = cont1+cont2+cont3+cont4+cont5+cont6;
             // interação com usuário
-            int opcao = JOptionPane.showConfirmDialog(null,mensagem, "Lançando moedas", JOptionPane.YES_NO_OPTION);
-            if(opcao != JOptionPane.YES_NO_OPTION){
+            int opcao = JOptionPane.showConfirmDialog(null,mensagem, "Lançando dados", JOptionPane.YES_NO_OPTION);
+            int resultado = random.nextInt(6) + 1;
+    
+
+
+            if(opcao != JOptionPane.YES_OPTION){
                 //estatísticas
                 String estatisticas = "Jogo finalizado!\n" +
-                "Total de lançamentos: " + (cont1+cont2+cont3+cont4+cont5+cont6) + "\n"+
-                " para o 1 foi: " + cont1 + "\n" + " para o 2 foi: " + cont2 + "\n" +  " para o 3 foi: " + cont3 + "\n" + " para o 4 foi: " + cont4 + "\n" +  " para o 5 foi: " + cont5 + "\n" +  " para o 6 foi: " +  cont6;
-                  
+                "Total de lançamentos: " + (Total) + "\n"+
+                " jogador 1: " + cont1 + "\n" + " jogador 2: " + cont2 + "\n" +  " jogador 3: " + cont3 + "\n" + " jogador 4: " + cont4 + "\n" +  " jogador 5: " + cont5 + "\n" +  " jogador 6: " +  cont6;
                 JOptionPane.showMessageDialog(null, estatisticas, "Finalizando Jogo", JOptionPane.INFORMATION_MESSAGE);
-                break;
-            } 
-            
-            int resultado = random.nextInt(6);
-            switch (resultado) {
-                case 0:
-                    cont1++; break;
-                case 1:
-                    cont1++; break;
-                case 2:
-                    cont3++; break;
-                case 3:
-                    cont4++; break;
-                case 4:
-                    cont5++; break;
-                case 5:
-                    cont6++; break;
-             
-            }
-            String saida = "Resultado do Lançamento: "+ espacoAmostral[resultado];
-            JOptionPane.showMessageDialog(null, saida, "Resultado",JOptionPane.INFORMATION_MESSAGE);
-        }                 
+                if(Total == 0){
+                    JOptionPane.showMessageDialog(null,"Nenhuma opção foi escolhida. Jogo encerrado", "ATENÇÃO",JOptionPane.INFORMATION_MESSAGE);
+                    break;
+                } 
 
-    }
+        
+                if ((cont1 > cont2) && (cont1 > cont3) && (cont1 > cont4) && (cont1 > cont5) && (cont1 > cont6)) {
+                    //  JOptionPane.showMessageDialog(null, "ponto para o jogador 1 ", " jogador ",JOptionPane.INFORMATION_MESSAGE);  
+                    String vencedor = "O vencedor que tirou maior pontuação foi o jogador numero 1 " + "\n" +" Probabilidade de ganhar : " + ((cont1/6.0)*100+"%");
+                    JOptionPane.showMessageDialog(null, vencedor, "Resultado",JOptionPane.INFORMATION_MESSAGE);    
+                             
+                  }
+                
+                else if ((cont2 > cont1) && (cont2 > cont3) && (cont2 > cont4) && (cont2 > cont5) && (cont2 > cont6)) {
+                    //    JOptionPane.showMessageDialog(null, "ponto para o jogador 2 ", " jogador ",JOptionPane.INFORMATION_MESSAGE); 
+                    String vencedor = "O vencedor que tirou maior pontuação foi: o jogador numero 2 " + "\n" +" Probabilidade de ganhar foi de : " + ((cont2/6.0)*100+"%");
+                    JOptionPane.showMessageDialog(null, vencedor, "Resultado",JOptionPane.INFORMATION_MESSAGE);
+                            
+                }
+                else if ((cont3 > cont2) && (cont3 > cont1) && (cont3 > cont4) && (cont3 > cont5) && (cont3 > cont6)) {
+                        //JOptionPane.showMessageDialog(null, "ponto para o jogador 3", " jogador ",JOptionPane.INFORMATION_MESSAGE);    
+                    String vencedor = "O vencedor que tirou maior pontuação foi: o jogador numero 3 " + "\n" + " Probabilidade de ganhar foi: " + ((cont3/6.0)*100+"%");
+                    JOptionPane.showMessageDialog(null, vencedor, "Resultado",JOptionPane.INFORMATION_MESSAGE);
+                                
+                }
+                else if ((cont4 > cont2) && (cont4 > cont1) && (cont4 > cont3) && (cont4 > cont5) && (cont4 > cont6)) {
+                    //  JOptionPane.showMessageDialog(null, "ponto para o jogador 4", " jogador ",JOptionPane.INFORMATION_MESSAGE);   
+                    String vencedor = "O vencedor que tirou maior pontuação foi: o jogador numero 4" + "\n" +" Probabilidade de ganhar foi : " + ((cont4/6.0)*100+"%");
+                    JOptionPane.showMessageDialog(null, vencedor, "Resultado",JOptionPane.INFORMATION_MESSAGE);    
+                          
+                }
+                else if ((cont5 > cont2) && (cont5 > cont1) && (cont5 > cont3) && (cont5 > cont4) && (cont5 > cont6)) {
+                    // JOptionPane.showMessageDialog(null, "ponto para o jogador 5", " jogador ",JOptionPane.INFORMATION_MESSAGE);             
+                    String vencedor = "O vencedor que tirou maior pontuação foi: o jogador numero 5 " + "\n" +" Probabilidade de ganhar foi: " + ((cont5/6.0)*100+"%") ;
+                    JOptionPane.showMessageDialog(null, vencedor, "Resultado",JOptionPane.INFORMATION_MESSAGE);   
+                    
+                }
+                else if ((cont6 > cont2) && (cont6 > cont3) && (cont6 > cont4) && (cont6 > cont1) && (cont6 > cont5)) {
+                    //  JOptionPane.showMessageDialog(null, "ponto para o jogador 6", " jogador ",JOptionPane.INFORMATION_MESSAGE);
+                    String vencedor = "O vencedor que tirou maior pontuação foi: o jogador numero 6 " + "\n" + " Probabilidade de ganhar foi: " + ((cont6/6.0)*100+"%");
+                    JOptionPane.showMessageDialog(null, vencedor, "Resultado",JOptionPane.INFORMATION_MESSAGE); 
+                    
+                }  
+                    
+                    int max = Math.max(cont1, Math.max(cont2, Math.max(cont3, Math.max(cont4, Math.max(cont5, cont6)))));
+                    int countMax = 0;
+                    
+                    if (cont1 == max) {
+                        countMax++;
+                    }
+                    if (cont2 == max) {
+                        countMax++;
+                    }
+                    if (cont3 == max) {
+                        countMax++;
+                    }
+                    if (cont4 == max) {
+                        countMax++;
+                    }
+                    if (cont5 == max) {
+                        countMax++;
+                    }
+                    if (cont6 == max) {
+                        countMax++;
+                    }
+                    if (countMax > 1) {
+                        int resposta = JOptionPane.showConfirmDialog(null, "Houve um empate entre " + countMax + " jogadores!\nDeseja continuar jogando?","Empate",JOptionPane.YES_NO_OPTION);
+                        if(resposta == JOptionPane.YES_OPTION){
+                            continue;
+                        }else{
+                            break;
+                        }
+                    }
+                break;
+            }   
+              
+                
+            
+                    switch (resultado) {
+                        case 1:
+                            cont1++; break;
+                        case 2:
+                            cont1++; break;
+                        case 3:
+                            cont3++; break;
+                        case 4:
+                            cont4++; break;
+                        case 5:
+                            cont5++; break;
+                        case 6:
+                            cont6++; break;
+                    
+                    }
+
+        
+                    String saida = "Resultado do Lançamento: "+ espacoAmostral[resultado - 1];
+                    JOptionPane.showMessageDialog(null, saida, "Resultado",JOptionPane.INFORMATION_MESSAGE);
+           
+        
+            }
+
+        }                 
 
 }
