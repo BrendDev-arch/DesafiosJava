@@ -1,0 +1,53 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Alg42",
+            "request": "launch",
+            "mainClass": "Alg42",
+            "projectName": "ProgramasEmJava_357120ea"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Alg41",
+            "request": "launch",
+            "mainClass": "Alg41",
+            "console": "integratedTerminal",
+            "projectName": "ProgramasEmJava_357120ea"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "console": "integratedTerminal",
+            "projectName": "ProgramasEmJava_357120ea"
+        },
+        {
+            "type": "java",
+            "name": "AppJ",
+            "request": "launch",
+            "mainClass": "AppJ",
+            "console": "integratedTerminal",
+            "projectName": "ProgramasEmJava_357120ea"
+        },
+        {
+            "type": "java",
+            "name": "FirstChange",
+            "request": "launch",
+            "mainClass": "FirstChange",
+            "console": "integratedTerminal",
+            "projectName": "ProgramasEmJava_357120ea"
+        }
+    ]
+}
